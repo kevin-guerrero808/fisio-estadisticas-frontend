@@ -1,14 +1,15 @@
 import { AppLayout } from "../Layout/Layout";
-import { Admin } from "../pages/admin/Admin";
 import { SignIn } from "../pages/admin/SignIn";
 import { Contact } from "../pages/Contact";
 import { Home } from "../pages/Home";
 import { NotFound } from "../pages/NotFound/NotFound";
+import { Indicators } from "../pages/Admin/Indicators/Indicators"
+import { CreateUser} from "../pages/Admin/Users/CreateUser/CreateUser"
 
 const AdminRoutes = [
     {
         path: '/admin',
-        component: Indicator,
+        component: Indicators,
         layout: AppLayout
     },
     {
@@ -18,7 +19,7 @@ const AdminRoutes = [
     },
     {
         path: '/admin/indicators',
-        component: Indicator,
+        component: Indicators,
         layout: AppLayout
     }
 ]

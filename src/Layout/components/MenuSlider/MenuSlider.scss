@@ -1,0 +1,63 @@
+@import '../../../assets/sass/config';
+
+.menu-slider {
+    position: fixed;
+    left: p0;
+    top: 65px;
+    height: 100vh;
+    background-color: #FFF;
+}
+// menu
+.ant-menu {
+    font-family: $f-name;
+    font-size: 16px;
+    color: $c-text;
+    .ant-menu-item {
+        border-radius: 50px;
+    }
+}
+.menu-slider_container {
+    padding: 38px 0 20px;
+}
+.menu-slider_title {
+    padding: 0 30px;
+    margin: 0 0 32px;
+    font-size: 20px;
+}
+.ant-menu-item {
+    height: 32px;
+    &:hover {
+        background: rgba($c-gray3, .5);
+    }
+    .ant-menu-item-icon {
+        font-size: 16px;
+    }
+}
+.ant-menu-item-selected {
+    background: rgba($c-gray3, .5);
+}
+// menu style by default of and design
+.ant-menu-inline {
+    &.ant-menu-root {
+        display: flex;
+        flex-direction: column;
+    }
+    .ant-menu-item {
+        margin: 4px 16px;
+        padding-left: 14px !important; // ovewrite and styles from inline styles
+        width: auto;
+        height: 32px;
+    }
+}
+.ant-menu-sub {
+    .ant-menu-item {
+        padding-left: 39px !important; // ovewrite and styles from inline styles
+    }
+}
+
+// State close
+.ant-layout-sider-collapsed {
+    .menu-slider_title {
+        display: none;
+    }
+}

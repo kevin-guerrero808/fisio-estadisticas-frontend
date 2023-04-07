@@ -1,11 +1,18 @@
-import logo from './logo.svg';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import allRoutesProject from './config/routes'
+import './App.scss';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-  
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        { allRoutesProject.map((route, i) => (
+          <Route key={route.path} path={route.path} element={<route.layout><route.component /></route.layout>} />
+        )) }
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

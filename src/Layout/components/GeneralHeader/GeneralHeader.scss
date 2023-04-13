@@ -1,0 +1,46 @@
+@import '../../../assets/sass/config';
+
+.general-header {
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
+}
+.ant-btn-link {
+    color: #FFF;
+    margin-right: 15px;
+    padding: 5px;
+    &:hover {
+        background-color: rgba(#FFF, 0.2);
+    }
+    & > span+.anticon {
+        margin-left: 0;
+    }
+}
+
+.general-header_logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFF;
+    margin-right: auto;
+}
+// auth
+.general-header_user {
+    color: #FFF;
+}
+.general-header_user_name {
+    margin-right: 10px;
+}
+// avatar
+.ant-avatar {
+    background-color: $c-success;
+    font-family: $f-name;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    position: relative;
+    .ant-avatar-string {
+        margin-top: 4px;
+    }
+}

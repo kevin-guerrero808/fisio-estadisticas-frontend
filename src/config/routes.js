@@ -1,34 +1,41 @@
-import { AppLayout } from "../Layout/Layout";
-import { SignIn } from "../pages/admin/SignIn";
-import { Contact } from "../pages/Contact";
-import { Home } from "../pages/Home";
-import { NotFound } from "../pages/NotFound/NotFound";
-import { Indicators } from "../pages/Admin/Indicators/Indicators"
-import { CreateUser} from "../pages/Admin/Users/CreateUser/CreateUser"
+import { GeneralLayout } from "../Layout/GeneralLayout/GeneralLayout";
+// import { SignIn } from "../pages/admin/SignIn";
+// import { Contact } from "../pages/Contact";
+// import { Home } from "../pages/Home";
+// import { NotFound } from "../pages/NotFound/NotFound";
+import Indicators from "../pages/Admin/Indicators/Indicators"
+import CreateUser from "../pages/Admin/Users/CreateUser/CreateUser"
+import ListUsers from "../pages/Admin/Users/ListUsers/ListUsers";
+import Form from "../pages/Form/Form";
 
 const AdminRoutes = [
     {
-        path: '/admin',
+        path: '/',
         component: Indicators,
-        layout: AppLayout
+        layout: GeneralLayout
+    },
+    {
+        path: 'admin/users/list',
+        component: ListUsers,
+        layout: GeneralLayout
     },
     {
         path: 'admin/users/create',
         component: CreateUser,
-        layout: AppLayout
+        layout: GeneralLayout
     },
     {
-        path: '/admin/indicators',
-        component: Indicators,
-        layout: AppLayout
+        path: '/admin/form',
+        component: Form,
+        layout: GeneralLayout
     }
 ]
 
 const GeneralRoutes = [
     {
-        path: '/',
-        component: DashBoard,
-        layout: AppLayout
+        path: '/form',
+        component: Form,
+        layout: GeneralLayout
     }
 ];
 

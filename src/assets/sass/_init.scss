@@ -6,3 +6,16 @@ body {
     font-family: $f-name;
     font-size: 16px;
 }
+.content {
+    width: 100%;
+    max-width: 1248px;
+    margin: 0 auto;
+}
+a {
+    color: $c-link;
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}

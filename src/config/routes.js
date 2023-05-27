@@ -1,5 +1,7 @@
 import { GeneralLayout } from "../Layout/GeneralLayout/GeneralLayout";
-// import { SignIn } from "../pages/admin/SignIn";
+import EmptyLayout from "../Layout/EmptyLayout";
+
+import Login from "../pages/Login";
 // import { Contact } from "../pages/Contact";
 // import { Home } from "../pages/Home";
 // import { NotFound } from "../pages/NotFound/NotFound";
@@ -36,6 +38,11 @@ const GeneralRoutes = [
         path: '/form',
         component: Form,
         layout: GeneralLayout
+    },
+    {
+        path: '/login',
+        component: Login,
+        layout: EmptyLayout
     }
 ];
 

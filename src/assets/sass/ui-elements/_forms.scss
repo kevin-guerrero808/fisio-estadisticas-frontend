@@ -1,0 +1,30 @@
+//
+// Forms fields
+//
+
+// Form
+.ant-form {
+    font-family: inherit;
+}
+
+// Label
+label {
+    font-size: $f-size;
+}
+
+// Input
+.ant-input {
+    height: 48px;
+    border-radius: 100vh;
+    width: 100%;
+    border-color: $c-gray2;
+    color: inherit;
+    padding: 5px 24px;
+    &:hover,
+    &:focus {
+        border-color: $c-link;
+    }
+    &::placeholder {
+        color: inherit;
+    }    
+}

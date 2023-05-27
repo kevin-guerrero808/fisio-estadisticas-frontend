@@ -1,0 +1,23 @@
+//
+// Buttons
+// 
+
+.ant-btn {
+    border-radius: 100vh;
+    font-size: $f-size-md;
+    font-weight: 700;
+    font-family: inherit;
+    height: 48px;
+    padding: 5px 24px;
+}
+.ant-btn-primary {
+    background-color: $c-secondary;
+    box-shadow: none;
+    color: $c-primary;
+    &:hover:not(:disabled),
+    &:focus {
+        box-shadow: 2px 2px 4px rgba($c-gray1, 0.2);
+        background-color: darken($c-secondary, 10%);;
+        color: $c-primary;
+    }
+}

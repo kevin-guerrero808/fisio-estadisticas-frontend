@@ -1,0 +1,52 @@
+@import 'src/assets/sass/config';
+
+.login {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1068px;
+    margin: auto;
+    padding-top: 30px;
+}
+// Introduction
+.login_introduction {
+    padding: 86px 30px 30px; 
+    max-width: 417px;
+    box-sizing: content-box;
+}
+.login_title {
+    display: flex;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+}
+.login_intro {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 16px;
+}
+// Form
+.ant-card {
+    padding: 78px 47px 47px;
+    box-shadow: $box-shadow-card;
+    width: 470px;
+    .ant-card-body {
+        padding: 0;
+    }
+}
+.login_form_title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+.login_form_intro {
+    margin-top: 22px;
+    margin-bottom: 40px;
+}
+.login_form_forgot {
+    float: right;
+    margin-left: auto;
+}
+.ant-btn {
+    margin-top: 24px;
+    width: 100%;
+}

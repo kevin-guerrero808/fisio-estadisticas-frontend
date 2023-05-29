@@ -1,0 +1,36 @@
+
+.users_item {
+    & + .users_item {
+        margin-top: 30px;
+    }
+}
+.users_card {
+    width: 100%;
+    padding: 20px;
+   
+    .ant-card-head {
+        padding: 0;
+        border-style: none;
+        margin-bottom: 20px;
+        min-height: auto;
+    }
+    .ant-card-head-title {
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .ant-card-body {
+        display: flex;
+        justify-content: space-between;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+.users_card_data_item:not(:first-child) {
+    margin-top: 5px;
+}
+.users_card_data_key {
+    margin-right: 10px;
+}

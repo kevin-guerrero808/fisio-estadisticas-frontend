@@ -9,11 +9,14 @@
     font-family: inherit;
     height: 48px;
     padding: 5px 24px;
+    border: 2px solid $c-primary;
+    color: $c-primary;
 }
 .ant-btn-primary {
     background-color: $c-secondary;
     box-shadow: none;
     color: $c-primary;
+    border-color: $c-secondary;
     &:hover:not(:disabled),
     &:focus {
         box-shadow: 2px 2px 4px rgba($c-gray1, 0.2);

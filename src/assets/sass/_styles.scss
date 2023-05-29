@@ -1,7 +1,11 @@
 @import './config';
 
+@import 'reset';
+
 // Begin to apply styles
 @import './init';
+
+@import './formats';
 
 // Ui elements
 @import './ui-elements/forms';

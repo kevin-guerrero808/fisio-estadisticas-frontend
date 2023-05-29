@@ -1,7 +1,10 @@
-.content {
+.general-layout_content {
     flex: 1 0 100%;
+    width: 100%;
 }
-
+.general-layout_main-content {
+    padding: 41px 30px;
+}
 .ant-layout-has-sider {
     padding-left: 240px;
 }

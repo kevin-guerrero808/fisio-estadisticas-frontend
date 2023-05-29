@@ -27,6 +27,11 @@ const AdminRoutes = [
         layout: GeneralLayout
     },
     {
+        path: 'admin/users/edit/:id',
+        component: CreateUser,
+        layout: GeneralLayout
+    },
+    {
         path: '/admin/form',
         component: Form,
         layout: GeneralLayout

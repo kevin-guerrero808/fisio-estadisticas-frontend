@@ -14,13 +14,13 @@ export const MenuSlider = (props) => {
             label: 'Indicadores'
         },
         {
-            key: '/admin/users/list',
+            key: '/admin/users',
             icon: UserOutlined,
             label: 'Usuarios',
             children: [
                 {
                     subKey: '/admin/users/list',
-                    subLabel: 'Ver Usuario'
+                    subLabel: 'Usuarios'
                 },
                 {
                     subKey: '/admin/users/create',

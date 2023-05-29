@@ -12,7 +12,8 @@ label {
     font-size: $f-size;
 }
 
-// Input
+// Input and select
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector,
 .ant-input {
     height: 48px;
     border-radius: 100vh;
@@ -27,4 +28,18 @@ label {
     &::placeholder {
         color: inherit;
     }    
+}
+
+// select
+.ant-select {
+    .ant-select-arrow {
+        font-size: 13px;
+        right: 21px;
+        color: inherit;
+    }
+    &:hover {
+        .ant-select-arrow {
+            color: $c-link;
+        }
+    }
 }

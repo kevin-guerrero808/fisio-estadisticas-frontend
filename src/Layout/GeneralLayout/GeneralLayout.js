@@ -26,7 +26,7 @@ export const GeneralLayout = props => {
                         menuCollapsed={menuCollapsed}
                         setMenuCollapsed={handleCollapsed}></GeneralHeader>
                 </Header>
-            <Layout className='content'>
+            <Layout className='general-layout_content'>
                 <Sider style={{backgroundColor: '#FFF',
                     overflow: 'auto',
                     height: '100vh',
@@ -36,7 +36,7 @@ export const GeneralLayout = props => {
                     bottom: 0,}}
                     width={240}
                     collapsed={menuCollapsed}><MenuSlider></MenuSlider></Sider>
-                <Content style={{
+                <Content className='general-layout_main-content' style={{
                     minHeight: 'calc(100vh - 60px - 48px)'
                 }}>{children}</Content>
             </Layout>

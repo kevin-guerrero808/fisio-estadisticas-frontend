@@ -9,7 +9,7 @@ export const initialValues = () => {
 
 export function validationSchema() {
     return yup.object({
-        email: yup.string().email('No es un email valido').required('El email es requerido'),
+        email: yup.string().email('No es un correo valido').required('El correo es requerido'),
         password: yup.string().required('El password es requerido')
     })
 }

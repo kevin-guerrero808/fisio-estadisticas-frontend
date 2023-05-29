@@ -1,9 +1,10 @@
 const saveToken = (token) => {
-    sessionStorage.setItem("token", token);
+    console.log('token ' + token.access);
+    localStorage.setItem("token", token.access);
 }
 
 const getToken = () => {
-    return sessionStorage.getItem("token");
+    return localStorage.getItem("token");
 }
 
 export default {

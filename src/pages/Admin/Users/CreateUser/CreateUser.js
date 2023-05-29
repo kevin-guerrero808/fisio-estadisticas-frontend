@@ -88,15 +88,11 @@ export default function CreateUser() {
       console.log(formValue)
       usersService.createUser(formValue)
       .then((response) => {
-        if (response.ok) {
-          api['success']({
+        api['success']({
             message: 'Usuario agregado',
             description:
               'El usuario ha sido creado, revisar el correo registrado',
         });
-        } else {
-          throw Error();
-        }
       })
       .catch((err) => {
         console.log('pass');

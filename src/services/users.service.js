@@ -2,10 +2,12 @@ import { API_ROUTES } from '../util/constants';
 
 export default {
     getAllUsers: async () => {
-        return await fetch(`${API_ROUTES.USERS}/`, {
+        const token = localStorage.getItem('token');
+        return await fetch(`${API_ROUTES.USERS}/list`, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`
             }
         })
         .then((response) => {
@@ -17,7 +19,7 @@ export default {
         });
     },
     createUser: async (user) => {
-        return await fetch(`${API_ROUTES.USERS}/`, {
+        return await fetch(`${API_ROUTES.USERS}/new`, {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {
@@ -33,10 +35,12 @@ export default {
         });
     },
     getUser: async (id) => {
+        const token = localStorage.getItem('token');
         return await fetch(`${API_ROUTES.USERS}/${id}`, {
             method: 'get',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`
             }
         })
         .then((response) => {

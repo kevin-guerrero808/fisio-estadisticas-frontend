@@ -7,7 +7,7 @@ import './Login.scss';
 import { useFormik } from 'formik';
 import { initialValues, validationSchema } from './login.validator';
 import { useNavigate } from 'react-router-dom';
-import sessionStorageService from '../../services/sessionStorate.service';
+import localStorageService from '../../services/sessionStorate.service';
 
 import AuthService from '../../services/auth.service';
 
@@ -29,12 +29,14 @@ const Login = () => {
             AuthService.login(formValue)
             .then((response) => {
                 if (response.ok) {
-                    console.log(response);
-                    // sessionStorageService.saveToken();
-                    navigate("/");
+                    return response.json();
                 } else {
                     throw Error();
                 }
+            })
+            .then(response => {
+                localStorageService.saveToken(response);
+                navigate("/");
             })
             .catch((err) => {
                 console.log('pass');

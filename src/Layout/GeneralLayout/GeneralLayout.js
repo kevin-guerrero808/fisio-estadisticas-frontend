@@ -1,15 +1,26 @@
 import { Layout } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MenuSlider } from '../components/MenuSlider/MenuSlider';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import Sider from 'antd/es/layout/Sider';
 import GeneralHeader from '../components/GeneralHeader';
 
 import './GeneralLayout.scss'
+import { useNavigate } from 'react-router-dom';
 
 export const GeneralLayout = props => {
     const { children } = props;
 	const [ menuCollapsed, setMenuCollapsed ] = useState(false);
+    const navigate = useNavigate();
+    const checkUserToken = () => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            navigate("/login");
+        }
+    }
+    useEffect(() => {
+        checkUserToken();
+    }, []);
     function handleCollapsed(collapsed) {
         setMenuCollapsed(collapsed);
     }

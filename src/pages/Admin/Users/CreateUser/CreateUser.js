@@ -86,22 +86,44 @@ export default function CreateUser() {
 
     onSubmit: (formValue) => {
       console.log(formValue)
-      usersService.createUser(formValue)
-      .then((response) => {
-        api['success']({
-            message: 'Usuario agregado',
+      // create user
+      if (!id) {
+        usersService.createUser(formValue)
+        .then((response) => {
+          api['success']({
+              message: 'Usuario agregado',
+              description:
+                'El usuario ha sido creado, revisar el correo registrado',
+          });
+        })
+        .catch((err) => {
+          console.log('pass');
+          api['error']({
+            message: 'Error',
             description:
-              'El usuario ha sido creado, revisar el correo registrado',
+              'Hubo un error al crear el usuario, intente nuevamente',
+          });
         });
-      })
-      .catch((err) => {
-        console.log('pass');
-        api['error']({
-          message: 'Error',
-          description:
-            'Hubo un error al crear el usuario, intente nuevamente',
+      } 
+      // edit user
+      else {
+        usersService.updateUser(formValue, id)
+        .then((response) => {
+          api['success']({
+              message: 'Usuario actualizado',
+              description:
+                'Los datos del usuario han sido actualizados satisfactoriamente',
+          });
+        })
+        .catch((err) => {
+          console.log('pass');
+          api['error']({
+            message: 'Error',
+            description:
+              'Error al actualizar los datos del usuario',
+          });
         });
-      });
+      }
     }
   })
   const onDeparmentChange = (department) => {
@@ -112,7 +134,11 @@ export default function CreateUser() {
   return (
     <>
       { contextHolder }
-      <h1 className="title1">Nuevo usuario</h1>
+      { id ? (
+        <h1 className="title1">Editar usuario</h1>
+      ) : (
+        <h1 className="title1">Nuevo usuario</h1>
+      )}
       <Card className='create-user_card'>
         <Form layout="vertical"
           onFinish={formik.handleSubmit}>
@@ -209,7 +235,7 @@ export default function CreateUser() {
               ) }
             </Form.Item>
             <div className='create-user_actions'>
-              <Button type="primary create-user_button" htmlType="submit">Crear</Button>
+              <Button type="primary create-user_button" htmlType="submit">{ id ? 'Guardar' : 'Crear' }</Button>
             </div>
           </fieldset>
         </Form>

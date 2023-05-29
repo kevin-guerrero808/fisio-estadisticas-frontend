@@ -27,13 +27,21 @@ export default function CreateUser() {
   }
 
   const manageUserInformation = (user) => {
-    console.log(user)
     formik.setFieldValue('firstName', user.firstName);
     formik.setFieldValue('lastName', user.lastName);
     formik.setFieldValue('email', user.email);
     formik.setFieldValue('password', user.password);
     formik.setFieldValue('department', user.department);
     formik.setFieldValue('municipality', user.municipality);
+  }
+
+  const cleanUserInformation = (user) => {
+    formik.setFieldValue('firstName', '');
+    formik.setFieldValue('lastName', '');
+    formik.setFieldValue('email', '');
+    formik.setFieldValue('password', '');
+    formik.setFieldValue('department', '');
+    formik.setFieldValue('municipality', '');
   }
 
   const fillUserFields = (id) => {
@@ -53,6 +61,8 @@ export default function CreateUser() {
   useEffect(() => {
     if (id) {
       fillUserFields(id);
+    } else {
+      cleanUserInformation();
     }
     ColombiaOpenDataResourcesService.getMunicipalities()
     .then((response) => {
@@ -66,7 +76,7 @@ export default function CreateUser() {
               'Error on the server, load again',
         });
     });
-  }, [])
+  }, [id])
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -107,7 +117,6 @@ export default function CreateUser() {
     <>
       { contextHolder }
       <h1 className="title1">Nuevo usuario</h1>
-      {id}
       <Card className='create-user_card'>
         <Form layout="vertical"
           onFinish={formik.handleSubmit}>

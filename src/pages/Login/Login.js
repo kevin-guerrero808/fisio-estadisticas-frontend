@@ -36,7 +36,7 @@ const Login = () => {
             })
             .then(response => {
                 localStorageService.saveToken(response);
-                navigate("/");
+                navigate("/admin/users/list");
             })
             .catch((err) => {
                 console.log('pass');

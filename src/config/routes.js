@@ -9,6 +9,7 @@ import Indicators from "../pages/Admin/Indicators/Indicators"
 import CreateUser from "../pages/Admin/Users/CreateUser/CreateUser"
 import ListUsers from "../pages/Admin/Users/ListUsers/ListUsers";
 import Form from "../pages/Form/Form";
+import CreateMenu from "../pages/Admin/Menu/CreateMenu";
 
 const AdminRoutes = [
     {
@@ -34,6 +35,11 @@ const AdminRoutes = [
     {
         path: '/admin/form',
         component: Form,
+        layout: GeneralLayout
+    },
+    {
+        path: '/admin/menu/create',
+        component: CreateMenu,
         layout: GeneralLayout
     }
 ]

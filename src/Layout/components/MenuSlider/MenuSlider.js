@@ -1,5 +1,5 @@
 import { UserOutlined } from '@ant-design/icons'
-import { BarChartOutlined, FormOutlined, WalletOutlined } from '@ant-design/icons/lib/icons'
+import { BarChartOutlined, FormOutlined, WalletOutlined, MenuOutlined } from '@ant-design/icons/lib/icons'
 import { Layout, Menu, MenuItemProps } from 'antd'
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -32,6 +32,11 @@ export const MenuSlider = (props) => {
             key: '/admin/form',
             icon: FormOutlined,
             label: 'Formulario'
+        },
+        {
+            key: '/admin/menu/create',
+            icon: MenuOutlined,
+            label: 'Menu'
         }
     ];
     const { Sider } = Layout;

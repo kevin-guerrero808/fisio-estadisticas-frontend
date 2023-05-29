@@ -126,7 +126,7 @@ export default function CreateUser() {
                 value={formik.values.firstName}/>
               { formik.errors.firstName && (
                   <div className="ant-form-item-explain ant-form-item-explain-connected css-w8mnev" role="alert">
-                      <div className="ant-form-item-explain-error">{formik.errors.lastName}</div>
+                      <div className="ant-form-item-explain-error">{formik.errors.firstName}</div>
                   </div>
               ) }
             </Form.Item>

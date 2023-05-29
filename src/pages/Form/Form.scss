@@ -1,0 +1,27 @@
+.consultation-form {
+    .ant-card {
+        padding: 25px 31px;
+        width: 705px;
+    }
+    
+    .ant-card .ant-card-head {
+        padding: 0;
+        border-style: none;
+        min-height: auto;
+        margin-bottom: 17px;
+    }
+    
+    .ant-form-item {
+        margin-bottom: 0;
+    }
+    
+    .ant-card .ant-card-head-title {
+        font-size: 16px;
+        font-weight: 400;
+        font-family: inherit;
+    }
+    
+    .ant-card + .ant-card {
+        margin-top: 32px;
+    }
+}

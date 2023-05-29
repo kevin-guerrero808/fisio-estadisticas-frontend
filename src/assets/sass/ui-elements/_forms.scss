@@ -43,3 +43,26 @@ label {
         }
     }
 }
+
+// date picker
+.ant-picker {
+    height: 48px;
+    border-radius: 100vh;
+    border-color: #575757;
+    color: #575757;
+    width: 100%;
+    padding: 5px 24px;
+    .ant-picker-suffix {
+        color: $c-text;
+    }
+    &:focus {
+        border-color: $c-link;
+    }
+}
+
+.ant-picker .ant-picker-input >input {
+    color: $c-text;
+    &::placeholder {
+        color: $c-text;
+    }
+}
